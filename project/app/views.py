@@ -25,3 +25,11 @@ def html2(req):
     s=[10,20,30]
     student=[{"name":"arun","age":24,},{"name":"unni","age":22},{"name":"sinu","age":23},{"name":"josep","age":19},{"name":"kannan","age":20}]
     return render(req,'inox.html',{'data':a,'roll':p,'num':s,'student':student})
+
+def form(req):
+    if req.method=='POST':
+        name=req.POST['name']
+        age=int(req.POST['age'])
+        return render(req,'form.html',{'data1':name,'data2':age})
+    else :
+       return render(req,'form.html')
