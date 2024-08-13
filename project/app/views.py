@@ -33,3 +33,15 @@ def form(req):
         return render(req,'form.html',{'data1':name,'data2':age})
     else :
        return render(req,'form.html')
+std=[]
+def todos(req):
+
+     if req.method=='POST':
+        name=req.POST['name']
+        age=int(req.POST['age'])
+        id=int(req.POST['id'])
+        mark=int(req.POST['mark'])
+        std.append({'id':id,'name':name,'age':age,'mark':mark})
+        return render(req,"todos.html",{'data11':std})
+     else:
+        return render(req,'todos.html')         

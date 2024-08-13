@@ -8,5 +8,6 @@ urlpatterns=[
     path("func5/<c>",views.function5),
     path("html1",views.html1),
     path("html2",views.html2),
-    path("form",views.form)
+    path("form",views.form),
+    path("todos",views.todos)
 ]
