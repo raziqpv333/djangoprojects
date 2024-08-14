@@ -44,4 +44,9 @@ def todos(req):
         std.append({'id':id,'name':name,'age':age,'mark':mark})
         return render(req,"todos.html",{'data11':std})
      else:
-        return render(req,'todos.html')         
+        return render(req,'todos.html')     
+
+def tabletodo(req,id):
+    
+
+    return render (req,'todostable.html')

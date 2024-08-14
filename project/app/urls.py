@@ -9,5 +9,6 @@ urlpatterns=[
     path("html1",views.html1),
     path("html2",views.html2),
     path("form",views.form),
-    path("todos",views.todos)
+    path("todos1",views.todos),
+    path("tabletodo2/<id>",views.tabletodo)
 ]
