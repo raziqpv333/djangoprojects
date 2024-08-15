@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 
 
@@ -44,9 +44,20 @@ def todos(req):
         std.append({'id':id,'name':name,'age':age,'mark':mark})
         return render(req,"todos.html",{'data11':std})
      else:
-        return render(req,'todos.html')     
+        return render(req,'todos.html',{'data11':std})
 
 def tabletodo(req,id):
-    
+    pos=0
+    stud={}
+    for i in std:
+        if i["id"]==id:
+            stud=i
+            pos=std.index(i)
+    if req.method=='POST':
+        name=req.POST['name']
+        age=int(req.POST['age'])
+        mark=int(req.POST['mark'])
+        std[pos]={'id':id,'name':name,'age':age,'mark':mark}
+        return redirect (todos)
 
-    return render (req,'todostable.html')
+    return render (req,'todostable.html',{'data4':stud})

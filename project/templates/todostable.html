@@ -7,13 +7,16 @@
 </head>
 <body>
     <h1>marksheet edit</h1>
-    <form action="../tabletodo2" method="post">
+    <form action="" method="post">
+        {% csrf_token%}
         <label for="name">NAME</label>
-        <input type="text" value="" name="name" >
+        <input type="text" value="{{data4.name}}" name="name" >
         <label for="age">AGE</label>
-        <input type="number" value="" name="age">
+        <input type="number" value="{{data4.age}}" name="age">
         <label for="mark">MARK</label>
-        <input type="number" value=""name="mark">
+        <input type="number" value="{{data4.mark}}"name="mark">
+        <input type="submit" value="submit">
     </form>
+   
 </body>
 </html>
