@@ -61,3 +61,10 @@ def tabletodo(req,id):
         return redirect (todos)
 
     return render (req,'todostable.html',{'data4':stud})
+
+
+def delete(req,id):
+    for i in std:
+        if i["id"]==id:
+            std.remove(i)
+            return redirect(todos)

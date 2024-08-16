@@ -32,7 +32,9 @@
             <td>{{i.age}}</td>
             <td>{{i.id}}</td>
             <td>{{i.mark}}</td>
-            <td><a href="tabletodo2/{{i.id}}">edit</a></td>
+            <td><a href="tabletodo2/{{i.id}}">edit</a>
+                
+                <a href="../delete/{{i.id}}">delete</a></td>
         </tr>
         {%endfor%}
     </table>
