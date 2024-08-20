@@ -18,4 +18,4 @@ def addemployee(req):
         return render(req,'addemplo.html')
 def display (req):
     data1=employee.objects.all()
-    
+    return render (req,"emplo1.html",{"data11":data1})
