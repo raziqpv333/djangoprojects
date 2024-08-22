@@ -15,9 +15,9 @@
             <td>{{i.age}}</td>
             <td>{{i.job}}</td>
             <td>{{i.salary}}</td>
-            <td><a href="">edit</a>
+            <td><a href="../edit/{{i.pk}}">edit</a>
                 
-                <a href="../delete/{{i.id}}">delete</a></td>
+                <a href="../delete/{{i.pk}}">delete</a></td>
         </tr>
         {%endfor%}
  
