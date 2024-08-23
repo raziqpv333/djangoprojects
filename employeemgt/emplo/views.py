@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from . models import *
+from django.contrib.auth.models import auth
+
+
 # Create your views here.
 def emplo (req):
     return render(req,"emplo1.html")
@@ -38,3 +41,20 @@ def delete(red,id):
     a=employee.objects.get(pk=id)
     a.delete()
     return redirect(display)
+def login(req):
+    if req.method=='POST':
+        name=req.POST['username']
+        password=req.POST['password']
+        data=auth.authenticate(username=name,password=password)
+        if data is not None:
+            auth.login(req,data)
+            return redirect(home)
+    return render(req,'login.html')
+    
+def home(req):
+    return render(req,'home.html')
+
+
+def logout(req):
+    auth.logout(req)
+    return redirect(login)

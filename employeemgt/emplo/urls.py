@@ -6,5 +6,8 @@ urlpatterns=[
      path("add",views.addemployee),
      path("dis",views.display),
      path("edit/<id>",views.edit),
-     path("delete/<id>",views.delete)
+     path("delete/<id>",views.delete),
+     path("login",views.login),
+     path("home",views.home),
+     path("logout",views.logout)
 ]
