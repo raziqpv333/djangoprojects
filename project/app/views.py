@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-
+from .models import *
+from .forms import *
 
 # Create your views here.
 def function1(req):
@@ -68,3 +69,25 @@ def delete(req,id):
         if i["id"]==id:
             std.remove(i)
             return redirect(todos)
+
+        
+def addmark (req):
+    a=Student.objects.all()
+    return render(req,'addmark.html',{'a':a})        
+
+
+def user_form(req):
+    if req.method=='POST':
+        data=employee_form(req.POST)
+        if data.is_valid():
+            name=data.cleaned_data['name']
+            age=data.cleaned_data['age']
+            position=data.cleaned_data['position']
+            data=employee.objects.create(name=name,age=age,position=position)
+            data.save()
+            
+
+
+    data=employee_form()
+
+    return render(req,'userform.html',{'data':data})

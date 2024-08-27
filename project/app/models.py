@@ -7,3 +7,9 @@ class Student(models.Model):
     place=models.TextField()
     def __str__(self):
         return self.name+'-'+self.place
+
+class employee(models.Model):
+    name=models.TextField()
+    age=models.IntegerField()
+    position=models.TextField()
+    
