@@ -13,3 +13,4 @@ class employee(models.Model):
     age=models.IntegerField()
     position=models.TextField()
     
+    

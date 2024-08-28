@@ -89,5 +89,16 @@ def user_form(req):
 
 
     data=employee_form()
-
     return render(req,'userform.html',{'data':data})
+
+def modform(req):
+   if req.method=='POST':
+       data=model_form(req.POST)
+       if data.is_valid():
+           data.save()
+           return redirect(modform)
+           
+   else:
+         data=model_form()
+         return render(req,"modelform.html",{'data':data})
+

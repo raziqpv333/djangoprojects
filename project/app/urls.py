@@ -12,5 +12,6 @@ urlpatterns=[
     path("todos1",views.todos),
     path("tabletodo2/<int:id>",views.tabletodo),
     path("delete/<int:id>",views.delete),
-    path("userform",views.user_form)
+    path("userform",views.user_form),
+    path('modelform',views.modform)
 ]
