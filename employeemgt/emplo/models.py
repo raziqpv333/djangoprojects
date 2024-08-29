@@ -7,3 +7,9 @@ class employee(models.Model):
     jod=models.TextField()
     salary=models.IntegerField()
 
+class work(models.Model):
+    name=models.TextField()
+    price=models.IntegerField()
+    dis=models.TextField()
+    img=models.FileField()
+    
