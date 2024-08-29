@@ -101,4 +101,8 @@ def modform(req):
    else:
          data=model_form()
          return render(req,"modelform.html",{'data':data})
+   
+def base(req):
+    return render(req,"extend.html")
+
 

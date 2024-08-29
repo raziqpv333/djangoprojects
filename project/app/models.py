@@ -13,4 +13,8 @@ class employee(models.Model):
     age=models.IntegerField()
     position=models.TextField()
     
-    
+class product(models.Model):
+    name=models.TextField()
+    price=models.IntegerField()
+    dis=models.TextField()
+    img=models.FileField()
