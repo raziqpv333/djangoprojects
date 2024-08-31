@@ -14,5 +14,7 @@ urlpatterns=[
     path("delete/<int:id>",views.delete),
     path("userform",views.user_form),
     path('modelform',views.modform),
-    path("base",views.base)
+    path("base",views.base),
+    path("addproduct",views.addproduct),
+    path("displayproduct",views.displayproduct)
 ]

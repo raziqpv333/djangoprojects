@@ -105,4 +105,15 @@ def modform(req):
 def base(req):
     return render(req,"extend.html")
 
-
+def addproduct(req):
+    if req.method=='POST':
+        name=req.POST['name']
+        price=int(req.POST['price'])
+        dis=req.POST['discription']
+        img=req.FILES['image']
+        data=product.objects.create(name=name,price=price,dis=dis,img=img)
+        data.save()
+    return render(req,"add_product.html")
+def displayproduct(req):
+    p=product.objects.all()
+    return render(req,"displayproduct.html",{'p':p})
