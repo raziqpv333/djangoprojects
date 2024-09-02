@@ -58,3 +58,19 @@ def home(req):
 def logout(req):
     auth.logout(req)
     return redirect(login)
+
+def productadd(req):
+    if req.method=='POST':
+        name=req.POST['name']
+        price=int(req.POST['price'])
+        dis=req.POST['discription']
+        img=req.FILES['image']
+        data=product.objects.create(name=name,price=price,dis=dis,img=img)
+        data.save()
+    return render(req,'productadded.html')    
+
+
+def productdisplay(req):
+    a=product.objects.all()
+    return render(req,"productdisplay.html",{'a':a})
+

@@ -13,3 +13,9 @@ class work(models.Model):
     dis=models.TextField()
     img=models.FileField()
     
+  
+class product(models.Model):
+    name=models.TextField()
+    price=models.IntegerField()
+    dis=models.TextField()
+    img=models.FileField()    
